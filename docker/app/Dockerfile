@@ -4,6 +4,10 @@ WORKDIR /go-cloudnative-practice
 
 RUN apk update && apk add --no-cache gcc musl-dev git
 
+# Cache modules by placing them in Docker, downlading them, then copying all other files to Docker.
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY . .
 
 RUN go build -ldflags '-w -s' -a -o ./bin/app ./cmd/app

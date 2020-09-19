@@ -1,24 +1,27 @@
 package main
 
 import (
+	"fabiangonz98/go-cloudnative-practice/config"
 	"fmt"
 	"log"
 	"net/http"
-	"time"
 )
 
 func main() {
+	appConf := config.AppConfig()
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", Greet)
 
-	log.Println("Starting server :8080")
+	addr := fmt.Sprintf(":%d", appConf.Server.Port)
+	log.Printf("Starting server %s\n", addr)
 
 	s := &http.Server{
-		Addr:         ":8080",
+		Addr:         addr,
 		Handler:      mux,
-		ReadTimeout:  30 * time.Second,
-		WriteTimeout: 30 * time.Second,
-		IdleTimeout:  120 * time.Second,
+		ReadTimeout:  appConf.Server.TimeoutRead,
+		WriteTimeout: appConf.Server.TimeoutWrite,
+		IdleTimeout:  appConf.Server.TimeoutIdle,
 	}
 
 	if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
