@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fabiangonz98/go-cloudnative-practice/app/router"
 	"fabiangonz98/go-cloudnative-practice/config"
 	"fmt"
 	"log"
@@ -10,15 +11,14 @@ import (
 func main() {
 	appConf := config.AppConfig()
 
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", Greet)
+	appRouter := router.New()
 
 	addr := fmt.Sprintf(":%d", appConf.Server.Port)
 	log.Printf("Starting server %s\n", addr)
 
 	s := &http.Server{
 		Addr:         addr,
-		Handler:      mux,
+		Handler:      appRouter,
 		ReadTimeout:  appConf.Server.TimeoutRead,
 		WriteTimeout: appConf.Server.TimeoutWrite,
 		IdleTimeout:  appConf.Server.TimeoutIdle,
@@ -26,11 +26,5 @@ func main() {
 
 	if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		log.Fatalf("Server startup failed! >> %v", err)
-	}
-}
-
-func Greet(w http.ResponseWriter, r *http.Request) {
-	if _, err := fmt.Fprintf(w, "Hello World!"); err != nil {
-		log.Fatalf("Error contacting handler... >> %v", err)
 	}
 }

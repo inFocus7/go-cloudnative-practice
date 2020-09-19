@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9413045-a5c2-4005-ab5b-0ac1b265484c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/app/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/router/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/app/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
