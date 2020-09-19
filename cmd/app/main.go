@@ -1,20 +1,23 @@
 package main
 
 import (
+	"fabiangonz98/go-cloudnative-practice/app"
 	"fabiangonz98/go-cloudnative-practice/app/router"
 	"fabiangonz98/go-cloudnative-practice/config"
+	"fabiangonz98/go-cloudnative-practice/util/logger"
 	"fmt"
-	"log"
 	"net/http"
 )
 
 func main() {
 	appConf := config.AppConfig()
-
-	appRouter := router.New()
+	logger := logger.New(appConf.Debug, false)
+	application := app.New(logger)
+	appRouter := router.New(application)
 
 	addr := fmt.Sprintf(":%d", appConf.Server.Port)
-	log.Printf("Starting server %s\n", addr)
+
+	logger.Info().Msgf("Starting server %v", addr)
 
 	s := &http.Server{
 		Addr:         addr,
@@ -25,6 +28,6 @@ func main() {
 	}
 
 	if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		log.Fatalf("Server startup failed! >> %v", err)
+		logger.Fatal().Err(err).Msg("Server startup failed")
 	}
 }

@@ -9,3 +9,5 @@ _W.I.P_
 3) 🚀 The site should now be running on `localhost:8080` assuming no Docker setup errors.
 
 **NOTE**: *Built Docker image is ~500 MB. To remove the image, on the command prompt run `docker images` to find the Image ID, then `docker rmi -f <image_id>`*
+
+_Personal Note: I need to better understand how logging works_
