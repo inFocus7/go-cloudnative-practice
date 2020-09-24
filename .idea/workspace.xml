@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9413045-a5c2-4005-ab5b-0ac1b265484c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adapter/gorm/gorm.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/health_handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/book_handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/router/middleware/content_type_json.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/router/middleware/content_type_json_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/app/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/app/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +54,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Go Test.go test fabiangonz98/go-cloudnative-practice/util/logger">
+  <component name="RunManager" selected="Go Test.go test fabiangonz98/go-cloudnative-practice/app/router/middleware">
     <configuration name="Example in fabiangonz98/go-cloudnative-practice/util/logger" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-cloudnative-practice" />
       <working_directory value="$PROJECT_DIR$/util/logger" />
@@ -91,15 +88,14 @@
       <pattern value="^\QExampleLogger_Fatal\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="ExampleLogger_Printf in fabiangonz98/go-cloudnative-practice/util/logger" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go test fabiangonz98/go-cloudnative-practice/app/router/middleware" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-cloudnative-practice" />
-      <working_directory value="$PROJECT_DIR$/util/logger" />
+      <working_directory value="$PROJECT_DIR$/app/router/middleware" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="fabiangonz98/go-cloudnative-practice/util/logger" />
+      <package value="fabiangonz98/go-cloudnative-practice/app/router/middleware" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QExampleLogger_Printf\E$" />
       <method v="2" />
     </configuration>
     <configuration name="go test fabiangonz98/go-cloudnative-practice/util/logger" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -114,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.go test fabiangonz98/go-cloudnative-practice/app/router/middleware" />
         <item itemvalue="Go Test.go test fabiangonz98/go-cloudnative-practice/util/logger" />
         <item itemvalue="Go Test.Example in fabiangonz98/go-cloudnative-practice/util/logger" />
         <item itemvalue="Go Test.ExampleLogger_Fatal in fabiangonz98/go-cloudnative-practice/util/logger" />
         <item itemvalue="Go Test.ExampleLogger_Error in fabiangonz98/go-cloudnative-practice/util/logger" />
-        <item itemvalue="Go Test.ExampleLogger_Printf in fabiangonz98/go-cloudnative-practice/util/logger" />
       </list>
     </recent_temporary>
   </component>
