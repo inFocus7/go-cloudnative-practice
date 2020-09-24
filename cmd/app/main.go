@@ -1,6 +1,7 @@
 package main
 
 import (
+	dbConn "fabiangonz98/go-cloudnative-practice/adapter/gorm"
 	"fabiangonz98/go-cloudnative-practice/app"
 	"fabiangonz98/go-cloudnative-practice/app/router"
 	"fabiangonz98/go-cloudnative-practice/config"
@@ -12,7 +13,17 @@ import (
 func main() {
 	appConf := config.AppConfig()
 	logger := logger.New(appConf.Debug, false)
-	application := app.New(logger)
+
+	db, err := dbConn.New(appConf)
+	if err != nil {
+		logger.Fatal().Err(err).Msg("")
+		return
+	}
+	if appConf.Debug {
+		db.LogMode(true)
+	}
+
+	application := app.New(logger, db)
 	appRouter := router.New(application)
 
 	addr := fmt.Sprintf(":%d", appConf.Server.Port)
